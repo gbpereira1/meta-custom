@@ -1,0 +1,1 @@
+IMAGE_INSTALL:append = " static-ip myuser"
