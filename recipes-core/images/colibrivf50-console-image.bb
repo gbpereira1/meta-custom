@@ -11,7 +11,7 @@ IMAGE_NAME = "${MACHINE}_${IMAGE_BASENAME}"
 SYSTEMD_DEFAULT_TARGET = "graphical.target"
 
 #create the deployment directory-tree
-require recipes-images/images/tdx-image-fstype.inc
+require recipes-images/images/deploy-tasks.inc
 
 IMAGE_LINGUAS = "en-us"
 
@@ -37,7 +37,6 @@ IMAGE_INSTALL += " \
     mainuser \
 "
 
-require recipes-images/images/tdx-extra.inc
 
 IMAGE_DEV_MANAGER   = "udev"
 IMAGE_INIT_MANAGER  = "systemd"
