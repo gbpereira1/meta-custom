@@ -1,8 +1,10 @@
 #!/bin/sh
+
 ECHO=`which echo`
 BUILDDIR="../../build"
 FIRST_TIME=0
 cd layers/openembedded-core/
+
 if [ ! -f ${BUILDDIR}/conf/local.conf ]; then
 	FIRST_TIME=1
 fi
@@ -14,12 +16,12 @@ echo "Targets are:"
 echo "    colibrivf50-console-image"
 
 if [ $FIRST_TIME -eq 1 ]; then
-	mkdir -p conf
-	cp ../layers/meta-custom/buildconf/*.conf conf/
+    mkdir -p conf
+    cp ../layers/meta-custom/buildconf/*.conf conf/
 
-	echo ""
-	$ECHO -e "\033[1mA conf/local.conf file has been created"
-	$ECHO -e "Check and edit the file to adapt to your local needs\033[0m"
-	echo "The following likely need your attention:"
-	echo "BB_NUMBER_THREADS, PARALLEL_MAKE, DL_DIR"
+    echo ""
+    $ECHO -e "\033[1mA conf/local.conf file has been created"
+    $ECHO -e "Check and edit the file to adapt to your local needs\033[0m"
+    echo "The following likely need your attention:"
+    echo "BB_NUMBER_THREADS, PARALLEL_MAKE, DL_DIR"
 fi
