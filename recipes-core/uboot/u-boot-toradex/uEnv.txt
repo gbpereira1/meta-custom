@@ -1,8 +1,8 @@
 bootcmd=run ubiboot; setenv fdtfile ${soc}-colibri-${fdt_board}.dtb && run distro_bootcmd;
 bootdelay=1
 baudrate=115200
-ipaddr=192.168.0.100
-serverip=192.168.0.1
+ipaddr=192.168.1.100
+serverip=192.168.1.101
 netmask=255.255.255.0
 loadaddr=0x80008000
 arch=arm
