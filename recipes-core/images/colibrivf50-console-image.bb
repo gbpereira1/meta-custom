@@ -11,7 +11,7 @@ IMAGE_NAME = "${MACHINE}_${IMAGE_BASENAME}"
 SYSTEMD_DEFAULT_TARGET = "graphical.target"
 
 #create the deployment directory-tree
-require recipes-images/images/deploy-tasks.inc
+require recipes-core/images/deploy-tasks.inc
 
 IMAGE_LINGUAS = "en-us"
 
@@ -36,7 +36,51 @@ IMAGE_INSTALL += " \
     static-ip  \
     mainuser \
 "
+IMAGE_INSTALL += " \
+    \
+    alsa-utils \
+    alsa-utils-aplay \
+    alsa-utils-amixer \
+    \
+    sqlite3 \
+    \
+    curl \
+    canutils \
+    nfs-utils-client \
+    openssh-scp \
+    openssh-sftp \
+    \
+    bzip2 \
+    gdbserver \
+    grep \
+    joe \
+    minicom \
+    ldd \
+    lsof \
+    mtd-utils \
+    dosfstools \
+    util-linux-fstrim \
+    \
+    devmem2 \
+    ethtool \
+    evtest \
+    hdparm \
+    iperf3 \
+    i2c-tools \
+    libsoc \
+    lmbench \
+    memtester \
+    nbench-byte \
+    rt-tests \
+    stress \
+    tinymembench \
+    util-linux-lsblk \
+    \
+"
 
+IMAGE_INSTALL_append_colibri-vf = " \
+    u-boot-toradex-fsl-fw-utils \
+"
 
 IMAGE_DEV_MANAGER   = "udev"
 IMAGE_INIT_MANAGER  = "systemd"

@@ -63,6 +63,13 @@ fakeroot imagedeploy() {
     :
 }
 
+makeuboot_scripts() {
+    for f in *.scr
+    do
+        mkimage -T script -C none -n 'Flash Apalis/Colibri module' -d $f `basename $f .scr`.img
+    done	
+}
+
 fakeroot imagedeploy_arm() {
     cd ${WORKDIR}
     cp -Lr ${BURNFLASH}/* ${IMAGE_DIR}/
@@ -70,7 +77,7 @@ fakeroot imagedeploy_arm() {
     sed -i 's/%kernel_device_trees%/${KERNEL_DEVICETREE}/' ${IMAGE_DIR}/update.sh
 
     cd ${IMAGE_DIR}/${MACHINE}_bin
-    ./mk-u-boot-scripts.sh
+    makeuboot_scripts
     cd ${WORKDIR}
 
     imagedeploy_kernel
