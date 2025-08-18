@@ -12,8 +12,6 @@ do_install () {
     install -d -m 755 ${D}/home//mainuser
 
     chown -R mainuser ${D}/home//mainuser
-
-
 }
 
 FILES_${PN} += "/home/mainuser"
