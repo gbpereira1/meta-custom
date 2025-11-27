@@ -1,12 +1,13 @@
 SUMMARY = "Custom image for Toradex Colibri VF50"
 DESCRIPTION = "Angstrom-based image without graphical interface"
 
-LICENSE = "MIT"
+LICENSE = "CLOSED"
 
 #start of the resulting deployable tarball name
 export IMAGE_BASENAME = "Console-Image"
 IMAGE_NAME_colibri-vf = "Colibri-VF_${IMAGE_BASENAME}"
 IMAGE_NAME = "${MACHINE}_${IMAGE_BASENAME}"
+export DEVICE_TREE = "ipeboard"
 
 SYSTEMD_DEFAULT_TARGET = "graphical.target"
 
@@ -14,7 +15,6 @@ SYSTEMD_DEFAULT_TARGET = "graphical.target"
 require recipes-core/images/deploy-tasks.inc
 
 IMAGE_LINGUAS = "en-us"
-
 
 DISTRO_UPDATE_ALTERNATIVES ??= ""
 ROOTFS_PKGMANAGE_PKGS ?= '${@oe.utils.conditional("ONLINE_PACKAGE_MANAGEMENT", "none", "", "${ROOTFS_PKGMANAGE} ${DISTRO_UPDATE_ALTERNATIVES}", d)}'

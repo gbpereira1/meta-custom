@@ -1,0 +1,19 @@
+/dts-v1/;
+
+#include "vf500-colibri.dtsi"
+#include "vf-colibri-eval-v3.dtsi"
+#include "ipeboard.dtsi"
+
+/ {
+    model = "Toradex VF50 Ipe expansion board";
+    compatible = "toradex,vf500-ipeboard","fsl,vf500";
+
+    leds {
+    compatible = "gpio-leds";
+
+    led_d1: user_led {
+        label = "led_d1";
+        gpios = <&gpio1 15 GPIO_ACTIVE_HIGH>;
+    };
+};
+};
