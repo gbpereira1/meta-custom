@@ -1,7 +1,12 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 LICENSE = "CLOSED"
 
-SRC_URI += "file://uEnv.txt"
+SRC_URI += "file://uEnv.txt.in"
+
+do_compile_append() {
+    sed -e "s|@FDTFILE@|${USER_DEVICETREE}|" \
+        ${WORKDIR}/uEnv.txt.in > ${WORKDIR}/uEnv.txt
+}
 
 do_install_append() {
     # Remove the symlink created by the .inc

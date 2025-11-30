@@ -7,7 +7,6 @@ LICENSE = "CLOSED"
 export IMAGE_BASENAME = "Console-Image"
 IMAGE_NAME_colibri-vf = "Colibri-VF_${IMAGE_BASENAME}"
 IMAGE_NAME = "${MACHINE}_${IMAGE_BASENAME}"
-export DEVICE_TREE = "ipeboard"
 
 SYSTEMD_DEFAULT_TARGET = "graphical.target"
 
