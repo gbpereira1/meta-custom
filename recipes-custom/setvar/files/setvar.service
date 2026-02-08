@@ -1,0 +1,12 @@
+[Unit]
+Description=Set U-Boot variables on first boot
+After=local-fs.target
+Before=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/setvar.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
