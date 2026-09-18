@@ -34,6 +34,7 @@ IMAGE_INSTALL += " \
     packagegroup-base-extended \
     static-ip  \
     mainuser \
+    setvar \
 "
 IMAGE_INSTALL += " \
     \
